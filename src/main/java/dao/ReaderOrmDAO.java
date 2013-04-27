@@ -15,6 +15,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class ReaderOrmDAO {
+
     private EntityManager entityManager;
 
     public List<Reader> getAllReaders() {
@@ -37,6 +38,10 @@ public class ReaderOrmDAO {
             throw new RuntimeException("There is no reader by id=" + id);
 
         }
+    }
+
+    public EntityManager getEntityManager() {
+        return entityManager;
     }
 
     public void setEntityManager(EntityManager entityManager) {
