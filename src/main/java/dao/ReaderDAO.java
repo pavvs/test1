@@ -2,9 +2,13 @@ package dao;
 
 import entity.Reader;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -65,4 +69,6 @@ public class ReaderDAO {
     public void setStatement(Statement statement) {
         this.statement = statement;
     }
+
+
 }

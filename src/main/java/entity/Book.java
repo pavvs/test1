@@ -1,5 +1,10 @@
 package entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Admin
@@ -7,12 +12,21 @@ package entity;
  * Time: 11:20
  * To change this template use File | Settings | File Templates.
  */
+
+@Entity
 public class Book {
+
+    @Id
+    @GeneratedValue
     private int id;
+
     private String title;
     private String author;
     private int pages;
     private double price;
+
+    public Book() {
+    }
 
     public Book(String title, String author, int pages, double price) {
         this.title = title;

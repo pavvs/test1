@@ -1,5 +1,9 @@
 package entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Admin
@@ -7,10 +11,19 @@ package entity;
  * Time: 19:02
  * To change this template use File | Settings | File Templates.
  */
+
+@Entity
 public class Reader {
+
+    @Id
+    @GeneratedValue
     private int id;
+
     private String name;
     private String address;
+
+    public Reader() {
+    }
 
     public Reader(int id, String name, String address) {
         this.id = id;
@@ -45,6 +58,12 @@ public class Reader {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Reader reader = (Reader) obj;
+        return id == reader.id && name.equals(reader.name) && address.equals(reader.address);
     }
 
     @Override
