@@ -1,5 +1,8 @@
 package test;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Admin
@@ -11,9 +14,24 @@ public class Person {
     private String name;
     private int age;
 
+    public Person() {
+    }
+
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    public void init() {
+        System.out.println("Person.init()");
+    }
+
+    public void destroy() {
+        System.out.println("Person.destroy()");
+    }
+
+    public static Person createPerson(String name, int age) {
+        return new Person(name, age);
     }
 
     public String getName() {
@@ -35,7 +53,7 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "name='" + name + '\'' +
+                "name=" + name +
                 ", age=" + age +
                 '}';
     }
