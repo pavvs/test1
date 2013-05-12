@@ -51,9 +51,9 @@ public class ReaderOrmDAO {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("testPU");
         EntityManager entityManager = emf.createEntityManager();
-        ReaderOrmDAO readerOrmDAO = new ReaderOrmDAO();
-        readerOrmDAO.setEntityManager(entityManager);
-        Reader newReader = new Reader("readerName1","readerAdress1");
+//        ReaderOrmDAO readerOrmDAO = new ReaderOrmDAO();
+//        readerOrmDAO.setEntityManager(entityManager);
+//        Reader newReader = new Reader("readerName1","readerAdress1");
 
         entityManager.getTransaction().begin();
 
@@ -61,8 +61,8 @@ public class ReaderOrmDAO {
 //          readerOrmDAO.deleteReader(6);
 
         entityManager.getTransaction().commit();
-        System.out.println(readerOrmDAO.getAllReaders());
-        System.out.println(readerOrmDAO.getReader(3));
+//        System.out.println(readerOrmDAO.getAllReaders());
+//        System.out.println(readerOrmDAO.getReader(3));
     }
 }
 

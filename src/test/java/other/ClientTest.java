@@ -13,6 +13,7 @@ import java.net.UnknownHostException;
  * Time: 13:25
  * To change this template use File | Settings | File Templates.
  */
+@AnnotationTest(name="Vasya")
 public class ClientTest {
 
     public static void main(String[] args) throws IOException {
