@@ -1,52 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="person1" class="test.Person">
-        <property name="age" value="100" />
-        <property name="name" value="Vasya" />
+        <property name="age" value="100"/>
+        <property name="name" value="Vasya"/>
     </bean>
     <bean id="person2" class="test.Person" init-method="init" destroy-method="destroy" lazy-init="true">
-        <constructor-arg index="0" value="Petya" />
-        <constructor-arg index="1" value="90" />
+        <constructor-arg index="0" value="Petya"/>
+        <constructor-arg index="1" value="90"/>
     </bean>
     <bean id="person3" class="test.Person" factory-method="createPerson">
-        <constructor-arg index="1" value="90" />
-        <constructor-arg index="0" value="Kolya" />
+        <constructor-arg index="1" value="90"/>
+        <constructor-arg index="0" value="Kolya"/>
     </bean>
 
     <bean id="personFactory" class="test.PersonFactory">
-        <property name="defaultAge" value="80" />
+        <property name="defaultAge" value="80"/>
     </bean>
     <bean id="person4" class="test.Person" factory-bean="personFactory" factory-method="createPerson">
-        <constructor-arg value="Vova" />
+        <constructor-arg value="Vova"/>
     </bean>
-    
+
     <bean id="personsCollector" class="test.PersonsCollector">
         <property name="personList">
             <list>
-                <ref bean="person1" />
-                <ref bean="person1" />
-                <ref bean="person2" />
+                <ref bean="person1"/>
+                <ref bean="person1"/>
+                <ref bean="person2"/>
                 <bean class="test.Person" factory-method="createPerson">
-                    <constructor-arg index="1" value="70" />
-                    <constructor-arg index="0" value="Kolyan" />
+                    <constructor-arg index="1" value="70"/>
+                    <constructor-arg index="0" value="Kolyan"/>
                 </bean>
             </list>
         </property>
         <property name="personSet">
             <set>
-                <ref bean="person1" />
-                <ref bean="person1" />
-                <ref bean="person2" />
+                <ref bean="person1"/>
+                <ref bean="person1"/>
+                <ref bean="person2"/>
             </set>
         </property>
         <property name="personMap">
             <map>
-                <entry key="1" value-ref="person1" />
-                <entry key="2" value-ref="person1" />
-                <entry key="2" value-ref="person2" />
+                <entry key="1" value-ref="person1"/>
+                <entry key="2" value-ref="person1"/>
+                <entry key="2" value-ref="person2"/>
             </map>
         </property>
         <property name="personProperties">
