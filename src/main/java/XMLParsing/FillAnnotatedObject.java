@@ -39,7 +39,7 @@ public class FillAnnotatedObject {
                     if(field.getType().equals(String.class))
                         System.out.println(fieldValue);
 
-//                        field.set(object,fieldValue.value());
+                        field.set(object,fieldValue.value());
 
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -83,7 +83,8 @@ public class FillAnnotatedObject {
     public static void main(String[] args) {
         FillAnnotatedObject fAO = new FillAnnotatedObject();
         Address address = new Address();
-        fAO.fillAnnotatedObject(address);
-        System.out.println(address);
+        AnnClass annClass = new AnnClass();
+        fAO.fillAnnotatedObject(annClass);
+        System.out.println(annClass);
     }
 }

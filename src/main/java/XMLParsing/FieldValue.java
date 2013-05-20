@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
  * To change this template use File | Settings | File Templates.
  */
 @Retention(RetentionPolicy.RUNTIME)
-//@Target({ElementType.FIELD})
+@Target({ElementType.FIELD})
 public @interface FieldValue {
    String value();
 }
