@@ -8,16 +8,16 @@ package XMLParsing;
  * To change this template use File | Settings | File Templates.
  */
 public class AnnClass {
-    @FieldValue("5")
-    private int count;
-    @FieldValue("15")
+    @FieldValue(value = "5")
+    private int count ;
+    @FieldValue(value = "15")
     private long loncount;
-    @FieldValue("d")
+    @FieldValue(value = "d")
     private char lit;
-    @FieldValue("true")
+    @FieldValue(value = "true")
     private boolean thing;
-    @FieldValue("something")
-    private  String text;
+    @FieldValue(value = "something")
+    private   String text;
 
     public AnnClass() {
     }
