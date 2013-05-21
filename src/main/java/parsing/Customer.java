@@ -1,4 +1,4 @@
-package XMLParsing;
+package parsing;
 
 /**
  * Created with IntelliJ IDEA.

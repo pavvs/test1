@@ -1,4 +1,4 @@
-package XMLParsing;
+package parsing;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;

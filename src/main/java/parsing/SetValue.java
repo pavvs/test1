@@ -1,4 +1,4 @@
-package XMLParsing;
+package parsing;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
