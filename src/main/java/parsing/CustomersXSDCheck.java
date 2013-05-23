@@ -41,6 +41,8 @@ public class CustomersXSDCheck {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         } catch (IOException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        } catch (ParserConfigurationException e){
+            e.printStackTrace();
         }
 
     }
