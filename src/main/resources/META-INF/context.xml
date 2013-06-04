@@ -21,4 +21,11 @@
         <property name="bookDao" ref="bookDao"></property>
     </bean>
 
+    <bean id="readerDao" class="dao.ReaderOrmDAO">
+        <property name="entityManager" ref="entityManager"></property>
+    </bean>
+    <bean id="readerService" class="service.impl.ReaderServiceImpl">
+        <property name="readerDao" ref="readerDao"></property>
+    </bean>
+
 </beans>
