@@ -25,6 +25,9 @@ public class Reader {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "reader", cascade = CascadeType.ALL)
     private List<Phone> phones = new ArrayList<Phone>();
 
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "reader", cascade = CascadeType.ALL)
+    private List<Book> books = new ArrayList<Book>();
+
     public Reader() {
     }
 
@@ -37,6 +40,14 @@ public class Reader {
     public Reader(String name, String address) {
         this.name = name;
         this.address = address;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 
     public int getId() {

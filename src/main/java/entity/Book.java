@@ -1,8 +1,6 @@
 package entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,6 +21,18 @@ public class Book {
     private String author;
     private int pages;
     private double price;
+
+    @ManyToOne
+    @JoinColumn(name = "reader_id")
+    private Reader reader;
+
+    public Reader getReader() {
+        return reader;
+    }
+
+    public void setReader(Reader reader) {
+        this.reader = reader;
+    }
 
     public Book() {
     }

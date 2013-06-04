@@ -25,10 +25,14 @@ public class Phone {
 
     public Phone() {
     }
-
     public Phone(String number) {
         this.number = number;
     }
+    public Phone (int id, String number){
+        this.id = id;
+        this.number = number;
+    }
+
 
     public int getId() {
         return id;
@@ -76,13 +80,21 @@ public class Phone {
         return result;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Phone{" +
+//                "id=" + id +
+//                ", number='" + number + '\'' +
+//                ", reader=" + reader +
+//                '}';
+//    }
+
     @Override
     public String toString() {
         return "Phone{" +
-                "id=" + id +
-                ", number='" + number + '\'' +
-                ", reader=" + reader +
-                '}';
+                "number='" + number + '\'' +
+                ", id=" + id +
+                "} " + super.toString();
     }
 }
 

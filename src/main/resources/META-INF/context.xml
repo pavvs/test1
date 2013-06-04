@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tool"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tool"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tool
+        http://www.springframework.org/schema/tool/spring-tool.xsd">
 
-    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+    <bean id="entityManagerFactory"
+          class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
         <property name="persistenceUnitName" value="testPU"/>
     </bean>
 
@@ -24,8 +29,16 @@
     <bean id="readerDao" class="dao.ReaderOrmDAO">
         <property name="entityManager" ref="entityManager"></property>
     </bean>
+
     <bean id="readerService" class="service.impl.ReaderServiceImpl">
         <property name="readerDao" ref="readerDao"></property>
     </bean>
 
+    <bean id="phoneDao" class="dao.PhoneOrmDAO">
+        <property name="entityManager" ref="entityManager"></property>
+    </bean>
+
+    <bean id="phoneService" class="service.impl.PhoneServiceImpl">
+        <property name="phoneDao" ref="phoneDao"></property>
+    </bean>
 </beans>

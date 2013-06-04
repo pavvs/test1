@@ -19,7 +19,8 @@ public class ReaderOrmDAO {
     private EntityManager entityManager;
 
     public List<Reader> getAllReaders() {
-        return entityManager.createQuery("select r from Reader r", Reader.class).getResultList();
+        return entityManager.createQuery("select r from Reader r", Reader.class).
+                getResultList();
     }
 
     public Reader getReader(int id) {
@@ -55,12 +56,12 @@ public class ReaderOrmDAO {
 //        readerOrmDAO.setEntityManager(entityManager);
 //        Reader newReader = new Reader("readerName1","readerAdress1");
 
-        entityManager.getTransaction().begin();
+//        entityManager.getTransaction().begin();
 
 //        readerOrmDAO.putNewReader(newReader);
 //          readerOrmDAO.deleteReader(6);
 
-        entityManager.getTransaction().commit();
+//        entityManager.getTransaction().commit();
 //        System.out.println(readerOrmDAO.getAllReaders());
 //        System.out.println(readerOrmDAO.getReader(3));
     }
